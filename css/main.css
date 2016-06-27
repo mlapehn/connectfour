@@ -1,0 +1,67 @@
+body {
+  background-color: #9999ff;
+  font-size: 100%;
+  padding: 2%;
+}
+
+#scoreboard{
+  margin:auto;
+  margin-top:2%;
+  width:45%;
+}
+
+.display{
+  margin:auto;
+  background-color:#177F75;
+  border-style:solid;
+}
+.display h2{
+  font-family: 'Montserrat', sans-serif;
+  color:#f1f1f1;
+}
+.display span{
+  padding:4px;
+  background-color:black;
+  font-family: 'Press Start 2P', cursive;
+  color:#ff2222;
+  font-size:24px;
+}
+
+#board {
+  background-color: #9999ff;
+  height: 684px;
+  width: 805px;
+  margin: auto;
+  box-shadow: 0px 0px 25px 10px #555;
+}
+
+.across {
+  background-color: #dddd00;
+  padding: 1%;
+}
+
+.hole {
+  margin: 10% 1%;
+  height: 100px;
+  width: 100px;
+  background-color: #9999ff;
+  border-style: solid;
+  border-color: black;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: inset 2px 2px 10px;
+}
+
+.black {
+  background-color: #151515;
+  border-color: #aaa;
+}
+
+.red {
+  background-color: #900;
+}
+
+.col-xs-1,
+.col-md-1 {
+  width: 14.285714285714285714285714285714%
+}
