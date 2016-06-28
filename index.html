@@ -1,28 +1,88 @@
-<div class="container-fluid">
-  <div id="board" class="row">
-    <div id="row-one" class="across  col-xs-1 col-md-1">
-      <div class="hole"></div>
-      <div class="hole"></div>
-      <div class="hole"></div>
-      <div class="hole"></div>
-      <div class="hole"></div>
-      <div class="hole"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/js.js" type="text/javascript"></script>
+
+
+    <meta charset="utf-8">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" id="board">
+            <div class="across col-xs-1 col-md-1" id="row-one">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="across col-xs-1 col-md-1" id="row-two">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="across col-xs-1 col-md-1" id="row-three">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="across col-xs-1 col-md-1" id="row-four">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="across col-xs-1 col-md-1" id="row-five">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="across col-xs-1 col-md-1" id="row-six">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="across col-xs-1 col-md-1" id="row-seven">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+        </div>
+        <div class="row text-center" id="scoreboard">
+            <div class="col-md-4">
+                <div class="display">
+                    <h2>Player 1 Wins: <span class="player"></span></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="display">
+                    <h2>Player 2 Wins: <span class="computer"></span></h2>
+                </div>
+            </div>
+        </div>
     </div>
-  <div id="scoreboard" class="row text-center">
-    <div class="col-md-4">
-      <div class="display">
-        <h2>Player Wins: <span class="player"></span></h2>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="display">
-        <h2>Tied: <span class="ties"></span></h2>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="display">
-        <h2>Computer Wins: <span class="computer"></span></h2>
-      </div>
-    </div>
-  </div>
-</div>
+</body>
+</html>

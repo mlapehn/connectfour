@@ -3,10 +3,11 @@ $(document).ready(function() {
   var check = jQuery.makeArray(elems);
 
   var playerWin = 0;
-  var computerWin = 0;
-  var tie = 0;
+  var player2Win = 0;
   var win = false;
   var loss = false;
+  // var player = 
+  // var player2 = new player
 
   var elemsOne = document.getElementById("row-one").getElementsByClassName("hole");
   var rowOne = jQuery.makeArray(elemsOne);
@@ -35,7 +36,6 @@ $(document).ready(function() {
       rowOne.splice(rowOne.indexOf(this), 1);
       checkForWin();
       checkForTie();
-      setTimeout(computerMove(), 100);
     }
   })
 
@@ -45,7 +45,6 @@ $(document).ready(function() {
       rowTwo.splice(rowTwo.indexOf(this), 1);
       checkForWin();
       checkForTie();
-      setTimeout(computerMove(), 100);
     }
   })
 
@@ -55,7 +54,6 @@ $(document).ready(function() {
       rowThree.splice(rowThree.indexOf(this), 1);
       checkForWin();
       checkForTie();
-      setTimeout(computerMove(), 100);
     }
   })
 
@@ -65,7 +63,6 @@ $(document).ready(function() {
       rowFour.splice(rowFour.indexOf(this), 1);
       checkForWin();
       checkForTie();
-      setTimeout(computerMove(), 100);
     }
   })
 
@@ -75,7 +72,6 @@ $(document).ready(function() {
       rowFive.splice(rowFive.indexOf(this), 1);
       checkForWin();
       checkForTie();
-      setTimeout(computerMove(), 100);
     }
   })
 
@@ -85,7 +81,6 @@ $(document).ready(function() {
       rowSix.splice(rowSix.indexOf(this), 1);
       checkForWin();
       checkForTie();
-      setTimeout(computerMove(), 100);
     }
   })
 
@@ -95,77 +90,8 @@ $(document).ready(function() {
       rowSeven.splice(rowSeven.indexOf(this), 1);
       checkForWin();
       checkForTie();
-      setTimeout(computerMove(), 100);
     }
   })
-
-  function computerMove() {
-    var rowArr = [rowOne, rowTwo, rowThree, rowFour, rowFive, rowSix, rowSeven]
-      //removing full columns
-    if (rowOne.length < 1) {
-      rowArr.splice(rowArr.indexOf(rowOne), 1);
-    }
-    if (rowTwo.length < 1) {
-      rowArr.splice(rowArr.indexOf(rowTwo), 1);
-    }
-    if (rowThree.length < 1) {
-      rowArr.splice(rowArr.indexOf(rowThree), 1);
-    }
-    if (rowFour.length < 1) {
-      rowArr.splice(rowArr.indexOf(rowFour), 1);
-    }
-    if (rowFive.length < 1) {
-      rowArr.splice(rowArr.indexOf(rowFive), 1);
-    }
-    if (rowSix.length < 1) {
-      rowArr.splice(rowArr.indexOf(rowSix), 1);
-    }
-    if (rowSeven.length < 1) {
-      rowArr.splice(rowArr.indexOf(rowSeven), 1);
-    }
-
-    var randRow = Math.floor(Math.random() * rowArr.length)
-
-    //where the computer places its chip
-    if (rowArr[randRow] === rowOne) {
-      if (rowOne.length > 0) {
-        $(rowOne[rowOne.length - 1]).addClass("red");
-        rowOne.splice(rowOne.indexOf(this), 1);
-      }
-    } else if (rowArr[randRow] === rowTwo) {
-      if (rowTwo.length > 0) {
-        $(rowTwo[rowTwo.length - 1]).addClass("red");
-        rowTwo.splice(rowTwo.indexOf(this), 1);
-      }
-    } else if (rowArr[randRow] === rowThree) {
-      if (rowThree.length > 0) {
-        $(rowThree[rowThree.length - 1]).addClass("red");
-        rowThree.splice(rowThree.indexOf(this), 1);
-      }
-    } else if (rowArr[randRow] === rowFour) {
-      if (rowFour.length > 0) {
-        $(rowFour[rowFour.length - 1]).addClass("red");
-        rowFour.splice(rowFour.indexOf(this), 1);
-      }
-    } else if (rowArr[randRow] === rowFive) {
-      if (rowFive.length > 0) {
-        $(rowFive[rowFive.length - 1]).addClass("red");
-        rowFive.splice(rowFive.indexOf(this), 1);
-      }
-    } else if (rowArr[randRow] === rowSix) {
-      if (rowSix.length > 0) {
-        $(rowSix[rowSix.length - 1]).addClass("red");
-        rowSix.splice(rowSix.indexOf(this), 1);
-      }
-    } else if (rowArr[randRow] === rowSeven) {
-      if (rowSeven.length > 0) {
-        $(rowSeven[rowSeven.length - 1]).addClass("red");
-        rowSeven.splice(rowSeven.indexOf(this), 1);
-      }
-    }
-    checkForLoss();
-    checkForTie();
-  }
 
   function checkForWin() {
 

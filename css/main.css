@@ -1,5 +1,5 @@
 body {
-  background-color: #9999ff;
+  background-color: #770A45;
   font-size: 100%;
   padding: 2%;
 }
@@ -12,7 +12,7 @@ body {
 
 .display{
   margin:auto;
-  background-color:#177F75;
+  background-color:#06586A;
   border-style:solid;
 }
 .display h2{
@@ -23,12 +23,12 @@ body {
   padding:4px;
   background-color:black;
   font-family: 'Press Start 2P', cursive;
-  color:#ff2222;
+  color:#06586A;
   font-size:24px;
 }
 
 #board {
-  background-color: #9999ff;
+  background-color: #770A45;
   height: 684px;
   width: 805px;
   margin: auto;
@@ -44,7 +44,7 @@ body {
   margin: 10% 1%;
   height: 100px;
   width: 100px;
-  background-color: #9999ff;
+  background-color: #770A45;
   border-style: solid;
   border-color: black;
   border-radius: 100%;
