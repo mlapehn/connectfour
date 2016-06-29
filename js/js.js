@@ -36,7 +36,7 @@ $(document).ready(function() {
       rowOne.splice(rowOne.indexOf(this), 1);
       checkForWin();
       checkForTie();
-    }
+        }
   })
 
   $("#row-two").on("click", function() {

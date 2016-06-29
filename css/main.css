@@ -1,5 +1,5 @@
 body {
-  background-color: #770A45;
+  background-color: #4169E1;
   font-size: 100%;
   padding: 2%;
 }
@@ -8,6 +8,7 @@ body {
   margin:auto;
   margin-top:2%;
   width:45%;
+  color: white;
 }
 
 .display{
@@ -18,21 +19,24 @@ body {
 .display h2{
   font-family: 'Montserrat', sans-serif;
   color:#f1f1f1;
+  margin: auto;
+  text-align: center;
+
 }
 .display span{
   padding:4px;
-  background-color:black;
   font-family: 'Press Start 2P', cursive;
   color:#06586A;
   font-size:24px;
+  margin: auto;
+  text-align: center;
 }
 
 #board {
-  background-color: #770A45;
-  height: 684px;
-  width: 805px;
+  background-color: #4169E1;
+  height: 500px;
+  width: 700px;
   margin: auto;
-  box-shadow: 0px 0px 25px 10px #555;
 }
 
 .across {
@@ -42,9 +46,9 @@ body {
 
 .hole {
   margin: 10% 1%;
-  height: 100px;
-  width: 100px;
-  background-color: #770A45;
+  height: 50px;
+  width: 50px;
+  background-color: #4169E1;
   border-style: solid;
   border-color: black;
   border-radius: 100%;
@@ -63,5 +67,5 @@ body {
 
 .col-xs-1,
 .col-md-1 {
-  width: 14.285714285714285714285714285714%
+  width: 10%
 }
