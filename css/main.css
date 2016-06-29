@@ -1,42 +1,21 @@
+.h1 {
+  margin:0 auto;
+  color: white;
+}
+
 body {
-  background-image: url("http://i.imgur.com/3pxzCuU.jpg");
+  background-image: url("https://i.ytimg.com/vi/hFjOiAkN8ew/maxresdefault.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 100%;
-  padding: 2%;
-}
-
-#scoreboard{
-  margin:auto;
-  margin-top:2%;
-  width:45%;
-  color: white;
-}
-
-.display{
-  margin:auto;
-  background-color:#06586A;
-  border-style:solid;
-  color: white;
-}
-.display h2{
-  font-family: 'Montserrat', sans-serif;
-  color:#f1f1f1;
-  margin: auto;
-  text-align: center;
-
-}
-.display span{
-  padding:4px;
-  font-family: 'Press Start 2P', cursive;
-  color:#06586A;
-  font-size:24px;
-  margin: auto;
-  text-align: center;
+  padding: 55px 0px 0px 0px;
 }
 
 #board {
   height: 600px;
   width: 800px;
-  margin: auto;
+  float: none;
+  margin:0 auto;
 }
 
 .across {

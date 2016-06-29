@@ -147,11 +147,10 @@ $(document).ready(function() {
             alert("player1 wins!");
         // } else if (win === true && turn === "red") {
         //     alert("player2 wins!");
-        // }
+        //     }
             clearBoard();
             playerWin++;
             $(turn).text(playerWin);
-
         }
     }
 
@@ -181,3 +180,4 @@ $(document).ready(function() {
         rowSeven = jQuery.makeArray(elemsSeven);
     };
 });
+
