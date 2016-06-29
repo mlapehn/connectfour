@@ -1,5 +1,5 @@
 body {
-  background-image: url("sunrise.jpg");
+  background-image: url("http://i.imgur.com/3pxzCuU.jpg");
   font-size: 100%;
   padding: 2%;
 }
@@ -15,6 +15,7 @@ body {
   margin:auto;
   background-color:#06586A;
   border-style:solid;
+  color: white;
 }
 .display h2{
   font-family: 'Montserrat', sans-serif;
@@ -33,13 +34,13 @@ body {
 }
 
 #board {
-  height: 500px;
-  width: 700px;
+  height: 600px;
+  width: 800px;
   margin: auto;
 }
 
 .across {
-  background-color: #dddd00;
+  background-color: blue;
   padding: 1%;
 }
 
@@ -47,7 +48,7 @@ body {
   margin: 10% 1%;
   height: 50px;
   width: 50px;
-  background-color: #4169E1;
+  background-color: white;
   border-style: solid;
   border-color: black;
   border-radius: 100%;

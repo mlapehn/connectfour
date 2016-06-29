@@ -1,4 +1,13 @@
 $(document).ready(function() {
+    //   clearBoard();  trying to create a function to completely clear the board
+    // switch turn needs work
+    function switchTurn() {
+        if (turn === "black") {
+            turn = "red";
+        } else if (turn === "red") {
+            turn = "black";
+        }
+    }
     var elems = document.getElementsByClassName("hole");
     var check = jQuery.makeArray(elems);
     var playerWin = 0;
@@ -28,23 +37,16 @@ $(document).ready(function() {
     var elemsSeven = document.getElementById("row-seven").getElementsByClassName(
         "hole");
     var rowSeven = jQuery.makeArray(elemsSeven);
-
     var turn = "black";
-
-    function switchTurn() {
-        if (turn === "black") {turn = "red"}
-         else if (turn === "red") {
-                turn = "black"
-            }
-    }
-
+    var black = "player1";
+    var red = "player2";
     $("#row-one").on("click", function() {
         if (rowOne.length > 0) {
             $(rowOne[rowOne.length - 1]).addClass(turn);
-            switchTurn();
             rowOne.splice(rowOne.indexOf(this), 1);
             checkForWin();
             checkForTie();
+            switchTurn();
         }
     });
     $("#row-two").on("click", function() {
@@ -53,6 +55,7 @@ $(document).ready(function() {
             rowTwo.splice(rowTwo.indexOf(this), 1);
             checkForWin();
             checkForTie();
+            switchTurn();
         }
     });
     $("#row-three").on("click", function() {
@@ -61,6 +64,7 @@ $(document).ready(function() {
             rowThree.splice(rowThree.indexOf(this), 1);
             checkForWin();
             checkForTie();
+            switchTurn();
         }
     });
     $("#row-four").on("click", function() {
@@ -69,6 +73,7 @@ $(document).ready(function() {
             rowFour.splice(rowFour.indexOf(this), 1);
             checkForWin();
             checkForTie();
+            switchTurn();
         }
     });
     $("#row-five").on("click", function() {
@@ -77,6 +82,7 @@ $(document).ready(function() {
             rowFive.splice(rowFive.indexOf(this), 1);
             checkForWin();
             checkForTie();
+            switchTurn();
         }
     });
     $("#row-six").on("click", function() {
@@ -85,6 +91,7 @@ $(document).ready(function() {
             rowSix.splice(rowSix.indexOf(this), 1);
             checkForWin();
             checkForTie();
+            switchTurn();
         }
     });
     $("#row-seven").on("click", function() {
@@ -93,100 +100,58 @@ $(document).ready(function() {
             rowSeven.splice(rowSeven.indexOf(this), 1);
             checkForWin();
             checkForTie();
+            switchTurn();
         }
     });
 
     function checkForWin() {
         for (var i = 0; i < 42; i++) {
-            if ($(check[i]).hasClass("black") && $(check[(i + 5)]).hasClass(
-                    "black") && $(check[(i + 10)]).hasClass("black") &&
-                $(check[(i + 15)]).hasClass("black")) {
+            if ($(check[i]).hasClass(turn) && $(check[(i + 5)]).hasClass(
+                turn) && $(check[(i + 10)]).hasClass(turn) && $(
+                check[(i + 15)]).hasClass(turn)) {
                 if (i !== 0 && i !== 1 && i !== 2 && i !== 6 && i !==
                     7 && i !== 8 && i !== 12 && i !== 13 && i !==
                     14 && i !== 18 && i !== 19 && i !== 20 && i !==
                     24 && i !== 25 && i !== 26) {
                     win = true;
-                    console.log("forward")
+                    console.log("forward");
                 }
-            } else if ($(check[i]).hasClass("black") && $(check[(i +
-                7)]).hasClass("black") && $(check[(i + 14)]).hasClass(
-                "black") && $(check[(i + 21)]).hasClass("black")) {
+            } else if ($(check[i]).hasClass(turn) && $(check[(i + 7)])
+                .hasClass(turn) && $(check[(i + 14)]).hasClass(turn) &&
+                $(check[(i + 21)]).hasClass(turn)) {
                 if (i !== 3 && i !== 4 && i !== 5 && i !== 9 && i !==
                     10 && i !== 11 && i !== 15 && i !== 16 && i !==
                     17 && i !== 21 && i !== 22 && i !== 23) {
                     win = true;
-                    console.log("back")
+                    console.log("back");
                 }
-            } else if ($(check[i]).hasClass("black") && $(check[(i +
-                6)]).hasClass("black") && $(check[(i + 12)]).hasClass(
-                "black") && $(check[(i + 18)]).hasClass("black")) {
+            } else if ($(check[i]).hasClass(turn) && $(check[(i + 6)])
+                .hasClass("turn") && $(check[(i + 12)]).hasClass(
+                    turn) && $(check[(i + 18)]).hasClass(turn)) {
                 win = true;
-                console.log("horizontal")
-            } else if ($(check[i]).hasClass("black") && $(check[(i +
-                1)]).hasClass("black") && $(check[(i + 2)]).hasClass(
-                "black") && $(check[(i + 3)]).hasClass("black")) {
+                console.log("horizontal");
+            } else if ($(check[i]).hasClass(turn) && $(check[(i + 1)])
+                .hasClass(turn) && $(check[(i + 2)]).hasClass(turn) &&
+                $(check[(i + 3)]).hasClass(turn)) {
                 if (i != 3 && i != 4 && i != 5 && i != 9 && i != 10 &&
                     i != 11 && i != 15 && i != 16 && i != 17 && i !=
                     21 && i != 22 && i != 23 && i != 27 && i != 28 &&
                     i != 29 && i != 33 && i != 34 && i != 35) {
                     win = true;
-                    console.log("vertical")
+                    console.log("vertical");
                 }
             }
             console.log(win);
         }
-        if (win === true) {
-            alert("win");
+        if (win === true && turn === "black") {
+            alert("player1 wins!");
+        // } else if (win === true && turn === "red") {
+        //     alert("player2 wins!");
+        // }
             clearBoard();
             playerWin++;
-            $("red").text(playerWin);
-        }
-    }
+            $(turn).text(playerWin);
 
-    function checkForLoss() {
-        for (var i = 0; i < 42; i++) {
-            if ($(check[i]).hasClass("red") && $(check[(i + 5)]).hasClass(
-                    "red") && $(check[(i + 10)]).hasClass("red") &&
-                $(check[(i + 15)]).hasClass("red")) {
-                if (i !== 0 && i !== 1 && i !== 2 && i !== 6 && i !==
-                    7 && i !== 8 && i !== 12 && i !== 13 && i !==
-                    14 && i !== 18 && i !== 19 && i !== 20 && i !==
-                    24 && i !== 25 && i !== 26) {
-                    loss = true;
-                    console.log("forward")
-                }
-            } else if ($(check[i]).hasClass("red") && $(check[(i +
-                7)]).hasClass("red") && $(check[(i + 14)]).hasClass(
-                "red") && $(check[(i + 21)]).hasClass("red")) {
-                if (i !== 3 && i !== 4 && i !== 5 && i !== 9 && i !==
-                    10 && i !== 11 && i !== 15 && i !== 16 && i !==
-                    17 && i !== 21 && i !== 22 && i !== 23) {
-                    loss = true;
-                    console.log("back")
-                }
-            } else if ($(check[i]).hasClass("red") && $(check[(i +
-                6)]).hasClass("red") && $(check[(i + 12)]).hasClass(
-                "red") && $(check[(i + 18)]).hasClass("red")) {
-                loss = true;
-                console.log("horizontal")
-            } else if ($(check[i]).hasClass("red") && $(check[(i +
-                1)]).hasClass("red") && $(check[(i + 2)]).hasClass(
-                "red") && $(check[(i + 3)]).hasClass("red")) {
-                if (i != 3 && i != 4 && i != 5 && i != 9 && i != 10 &&
-                    i != 11 && i != 15 && i != 16 && i != 17 && i !=
-                    21 && i != 22 && i != 23 && i != 27 && i != 28 &&
-                    i != 29 && i != 33 && i != 34 && i != 35) {
-                    loss = true;
-                    console.log("vertical")
-                }
-            }
-            console.log(loss);
-        }
-        if (loss === true) {
-            alert("You Lose");
-            clearBoard();
-            computerWin++;
-            $("red").text(computerWin);
         }
     }
 
