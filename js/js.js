@@ -145,13 +145,10 @@ $(document).ready(function() {
         }
         if (win === true && turn === "black") {
             alert("player1 wins!");
-        // } else if (win === true && turn === "red") {
-        //     alert("player2 wins!");
-        //     }
             clearBoard();
             playerWin++;
             $(turn).text(playerWin);
-        }
+        } 
     }
 
     function checkForTie() {

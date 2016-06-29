@@ -1,6 +1,15 @@
-.h1 {
-  margin:0 auto;
+h1 {
   color: white;
+}
+h2 {
+  color: white;
+  float: right;
+}
+
+h3 {
+  color: white;
+  float: right;
+  padding: 0px, 0px, 0px, 0px;
 }
 
 body {
