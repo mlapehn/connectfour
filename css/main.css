@@ -1,5 +1,5 @@
 body {
-  background-color: #4169E1;
+  background-image: url("sunrise.jpg");
   font-size: 100%;
   padding: 2%;
 }
@@ -33,7 +33,6 @@ body {
 }
 
 #board {
-  background-color: #4169E1;
   height: 500px;
   width: 700px;
   margin: auto;
