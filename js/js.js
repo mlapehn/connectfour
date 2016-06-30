@@ -1,6 +1,23 @@
 $(document).ready(function() {
-    //   clearBoard();  trying to create a function to completely clear the board
-    // switch turn needs work
+
+    $(document).ready(function(){
+    $("form").submit(function(){
+        //id pl1 = player1
+        player1 = document.getElementById("pl1").getElementsByClassName("play1");
+        //id pl2 = player2
+        player1 = document.getElementById("pl2").getElementsByClassName("play2");
+        //id pl3
+        player1 = document.getElementById("pl3").getElementsByClassName("play3");
+        //id pl4
+        player2 = document.getElementById("pl4").getElementsByClassName("play4");
+
+
+        alert("It's go time!!!");
+        });
+    });
+
+
+
     function switchTurn() {
         if (turn === "black") {
             turn = "red";
@@ -14,90 +31,92 @@ $(document).ready(function() {
     var player2Win = 0;
     var win = false;
     var loss = false;
-    // var player1 = black
-    // var player2 = red
-    var elemsOne = document.getElementById("row-one").getElementsByClassName(
+    
+    var elemsOne = document.getElementById("colm-one").getElementsByClassName(
         "hole");
-    var rowOne = jQuery.makeArray(elemsOne);
-    var elemsTwo = document.getElementById("row-two").getElementsByClassName(
+    var colmOne = jQuery.makeArray(elemsOne);
+    var elemsTwo = document.getElementById("colm-two").getElementsByClassName(
         "hole");
-    var rowTwo = jQuery.makeArray(elemsTwo);
-    var elemsThree = document.getElementById("row-three").getElementsByClassName(
+    var colmTwo = jQuery.makeArray(elemsTwo);
+    var elemsThree = document.getElementById("colm-three").getElementsByClassName(
         "hole");
-    var rowThree = jQuery.makeArray(elemsThree);
-    var elemsFour = document.getElementById("row-four").getElementsByClassName(
+    var colmThree = jQuery.makeArray(elemsThree);
+    var elemsFour = document.getElementById("colm-four").getElementsByClassName(
         "hole");
-    var rowFour = jQuery.makeArray(elemsFour);
-    var elemsFive = document.getElementById("row-five").getElementsByClassName(
+    var colmFour = jQuery.makeArray(elemsFour);
+    var elemsFive = document.getElementById("colm-five").getElementsByClassName(
         "hole");
-    var rowFive = jQuery.makeArray(elemsFive);
-    var elemsSix = document.getElementById("row-six").getElementsByClassName(
+    var colmFive = jQuery.makeArray(elemsFive);
+    var elemsSix = document.getElementById("colm-six").getElementsByClassName(
         "hole");
-    var rowSix = jQuery.makeArray(elemsSix);
-    var elemsSeven = document.getElementById("row-seven").getElementsByClassName(
+    var colmSix = jQuery.makeArray(elemsSix);
+    var elemsSeven = document.getElementById("colm-seven").getElementsByClassName(
         "hole");
-    var rowSeven = jQuery.makeArray(elemsSeven);
+    var colmSeven = jQuery.makeArray(elemsSeven);
     var turn = "black";
     var black = "player1";
     var red = "player2";
-    $("#row-one").on("click", function() {
-        if (rowOne.length > 0) {
-            $(rowOne[rowOne.length - 1]).addClass(turn);
-            rowOne.splice(rowOne.indexOf(this), 1);
+    function setMessage(msg) {
+            document.getElementById("message").innerText = msg;
+        }
+    $("#colm-one").on("click", function() {
+        if (colmOne.length > 0) {
+            $(colmOne[colmOne.length - 1]).addClass(turn);
+            colmOne.splice(colmOne.indexOf(this), 1);
             checkForWin();
             checkForTie();
             switchTurn();
         }
     });
-    $("#row-two").on("click", function() {
-        if (rowTwo.length > 0) {
-            $(rowTwo[rowTwo.length - 1]).addClass(turn);
-            rowTwo.splice(rowTwo.indexOf(this), 1);
+    $("#colm-two").on("click", function() {
+        if (colmTwo.length > 0) {
+            $(colmTwo[colmTwo.length - 1]).addClass(turn);
+            colmTwo.splice(colmTwo.indexOf(this), 1);
             checkForWin();
             checkForTie();
             switchTurn();
         }
     });
-    $("#row-three").on("click", function() {
-        if (rowThree.length > 0) {
-            $(rowThree[rowThree.length - 1]).addClass(turn);
-            rowThree.splice(rowThree.indexOf(this), 1);
+    $("#colm-three").on("click", function() {
+        if (colmThree.length > 0) {
+            $(colmThree[colmThree.length - 1]).addClass(turn);
+            colmThree.splice(colmThree.indexOf(this), 1);
             checkForWin();
             checkForTie();
             switchTurn();
         }
     });
-    $("#row-four").on("click", function() {
-        if (rowFour.length > 0) {
-            $(rowFour[rowFour.length - 1]).addClass(turn);
-            rowFour.splice(rowFour.indexOf(this), 1);
+    $("#colm-four").on("click", function() {
+        if (colmFour.length > 0) {
+            $(colmFour[colmFour.length - 1]).addClass(turn);
+            colmFour.splice(colmFour.indexOf(this), 1);
             checkForWin();
             checkForTie();
             switchTurn();
         }
     });
-    $("#row-five").on("click", function() {
-        if (rowFive.length > 0) {
-            $(rowFive[rowFive.length - 1]).addClass(turn);
-            rowFive.splice(rowFive.indexOf(this), 1);
+    $("#colm-five").on("click", function() {
+        if (colmFive.length > 0) {
+            $(colmFive[colmFive.length - 1]).addClass(turn);
+            colmFive.splice(colmFive.indexOf(this), 1);
             checkForWin();
             checkForTie();
             switchTurn();
         }
     });
-    $("#row-six").on("click", function() {
-        if (rowSix.length > 0) {
-            $(rowSix[rowSix.length - 1]).addClass(turn);
-            rowSix.splice(rowSix.indexOf(this), 1);
+    $("#colm-six").on("click", function() {
+        if (colmSix.length > 0) {
+            $(colmSix[colmSix.length - 1]).addClass(turn);
+            colmSix.splice(colmSix.indexOf(this), 1);
             checkForWin();
             checkForTie();
             switchTurn();
         }
     });
-    $("#row-seven").on("click", function() {
-        if (rowSeven.length > 0) {
-            $(rowSeven[rowSeven.length - 1]).addClass(turn);
-            rowSeven.splice(rowSeven.indexOf(this), 1);
+    $("#colm-seven").on("click", function() {
+        if (colmSeven.length > 0) {
+            $(colmSeven[colmSeven.length - 1]).addClass(turn);
+            colmSeven.splice(colmSeven.indexOf(this), 1);
             checkForWin();
             checkForTie();
             switchTurn();
@@ -128,8 +147,10 @@ $(document).ready(function() {
             } else if ($(check[i]).hasClass(turn) && $(check[(i + 6)])
                 .hasClass("turn") && $(check[(i + 12)]).hasClass(
                     turn) && $(check[(i + 18)]).hasClass(turn)) {
+                if (i !== 6 && i !== 12 && i !== 18) {
                 win = true;
                 console.log("horizontal");
+                }
             } else if ($(check[i]).hasClass(turn) && $(check[(i + 1)])
                 .hasClass(turn) && $(check[(i + 2)]).hasClass(turn) &&
                 $(check[(i + 3)]).hasClass(turn)) {
@@ -143,19 +164,24 @@ $(document).ready(function() {
             }
             console.log(win);
         }
-        if (win === true && turn === "black") {
-            alert("player1 wins!");
+        if (win === true) {
+            if (turn === "black") {
+            setMessage("Congratulations, " + black + "!  You win!");
+            }  else if (turn === "red"){
+            setMessage("Congratulations, " + red + "!  You win!");
+            }
             clearBoard();
             playerWin++;
-            $(turn).text(playerWin);
+            $(turn).text(playerWin); 
         } 
+      
     }
 
     function checkForTie() {
-        if (win === false && loss === false && rowOne.length === 0 &&
-            rowTwo.length === 0 && rowThree.length === 0 && rowFour
-            .length === 0 && rowFive.length === 0 && rowSix.length ===
-            0 && rowSeven.length === 0) {
+        if (win === false && loss === false && colmOne.length === 0 &&
+            colmTwo.length === 0 && colmThree.length === 0 && colmFour
+            .length === 0 && colmFive.length === 0 && colmSix.length ===
+            0 && colmSeven.length === 0) {
             alert("Try Again!");
             tie++;
             clearBoard();
@@ -168,13 +194,13 @@ $(document).ready(function() {
         $(".hole").removeClass("red");
         win = false;
         loss = false;
-        rowOne = jQuery.makeArray(elemsOne);
-        rowTwo = jQuery.makeArray(elemsTwo);
-        rowThree = jQuery.makeArray(elemsThree);
-        rowFour = jQuery.makeArray(elemsFour);
-        rowFive = jQuery.makeArray(elemsFive);
-        rowSix = jQuery.makeArray(elemsSix);
-        rowSeven = jQuery.makeArray(elemsSeven);
+        colmOne = jQuery.makeArray(elemsOne);
+        colmTwo = jQuery.makeArray(elemsTwo);
+        colmThree = jQuery.makeArray(elemsThree);
+        colmFour = jQuery.makeArray(elemsFour);
+        colmFive = jQuery.makeArray(elemsFive);
+        colmSix = jQuery.makeArray(elemsSix);
+        colmSeven = jQuery.makeArray(elemsSeven);
     };
 });
 
