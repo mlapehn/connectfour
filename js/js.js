@@ -6,10 +6,10 @@ $(document).ready(function() {
         player1 = document.getElementById("pl1").getElementsByClassName("play1");
         //id pl2 = player2
         player1 = document.getElementById("pl2").getElementsByClassName("play2");
-        //id pl3
-        player1 = document.getElementById("pl3").getElementsByClassName("play3");
-        //id pl4
-        player2 = document.getElementById("pl4").getElementsByClassName("play4");
+        // //id pl3
+        // player1 = document.getElementById("pl3").getElementsByClassName("play3");
+        // //id pl4
+        // player2 = document.getElementById("pl4").getElementsByClassName("play4");
 
 
         alert("It's go time!!!");
@@ -188,7 +188,7 @@ $(document).ready(function() {
             $(".ties").text(playerWin);
         }
     }
-
+    
     function clearBoard() {
         $(".hole").removeClass("black");
         $(".hole").removeClass("red");
