@@ -49,7 +49,7 @@ $(document).ready(function() {
     function setMessage(msg) {
             document.getElementById("message").innerText = msg;
         };
-    function forJp(thiscolmthingy) {    
+    function colmChecker(thiscolmthingy) {    
             $(thiscolmthingy[thiscolmthingy.length - 1]).addClass(turn);
             thiscolmthingy.splice(thiscolmthingy.indexOf(this), 1);
             checkForWin();
@@ -58,37 +58,37 @@ $(document).ready(function() {
         }
     $("#colm-one").on("click", function() {
         if (colmOne.length > 0) {
-            forJp(colmOne) 
+            colmChecker(colmOne) 
             }
         });
     $("#colm-two").on("click", function() {
         if (colmTwo.length > 0) {
-            forJp(colmTwo)
+            colmChecker(colmTwo)
         }
     });
     $("#colm-three").on("click", function() {
         if (colmThree.length > 0) {
-            forJp(colmThree)
+            colmChecker(colmThree)
         }
     });
     $("#colm-four").on("click", function() {
         if (colmFour.length > 0) {
-            forJp(colmFour)
+            colmChecker(colmFour)
         }
     });
     $("#colm-five").on("click", function() {
         if (colmFive.length > 0) {
-            forJp(colmFive)
+            colmChecker(colmFive)
         }
     });
     $("#colm-six").on("click", function() {
         if (colmSix.length > 0) {
-            forJp(colmSix)
+            colmChecker(colmSix)
         }
     });
     $("#colm-seven").on("click", function() {
         if (colmSeven.length > 0) {
-           forJp(colmSeven)
+           colmChecker(colmSeven)
         }
     });
 
@@ -114,7 +114,7 @@ $(document).ready(function() {
                     console.log("back");
                 }
             } else if ($(check[i]).hasClass(turn) && $(check[(i + 6)])
-                .hasClass("turn") && $(check[(i + 12)]).hasClass(
+                .hasClass(turn) && $(check[(i + 12)]).hasClass(
                     turn) && $(check[(i + 18)]).hasClass(turn)) {
                 if (i !== 6 && i !== 12 && i !== 18) {
                 win = true;
