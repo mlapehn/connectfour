@@ -1,23 +1,13 @@
 $(document).ready(function() {
-
     $(document).ready(function(){
     $("form").submit(function(){
         //id pl1 = player1
         player1 = document.getElementById("pl1").getElementsByClassName("play1");
         //id pl2 = player2
         player1 = document.getElementById("pl2").getElementsByClassName("play2");
-        // //id pl3
-        // player1 = document.getElementById("pl3").getElementsByClassName("play3");
-        // //id pl4
-        // player2 = document.getElementById("pl4").getElementsByClassName("play4");
-
-
         alert("It's go time!!!");
         });
     });
-
-
-
     function switchTurn() {
         if (turn === "black") {
             turn = "red";
@@ -31,7 +21,6 @@ $(document).ready(function() {
     var player2Win = 0;
     var win = false;
     var loss = false;
-    
     var elemsOne = document.getElementById("colm-one").getElementsByClassName(
         "hole");
     var colmOne = jQuery.makeArray(elemsOne);
@@ -56,70 +45,50 @@ $(document).ready(function() {
     var turn = "black";
     var black = "player1";
     var red = "player2";
+
     function setMessage(msg) {
             document.getElementById("message").innerText = msg;
+        };
+    function forJp(thiscolmthingy) {    
+            $(thiscolmthingy[thiscolmthingy.length - 1]).addClass(turn);
+            thiscolmthingy.splice(thiscolmthingy.indexOf(this), 1);
+            checkForWin();
+            checkForTie();
+            switchTurn();
         }
     $("#colm-one").on("click", function() {
         if (colmOne.length > 0) {
-            $(colmOne[colmOne.length - 1]).addClass(turn);
-            colmOne.splice(colmOne.indexOf(this), 1);
-            checkForWin();
-            checkForTie();
-            switchTurn();
-        }
-    });
+            forJp(colmOne) 
+            }
+        });
     $("#colm-two").on("click", function() {
         if (colmTwo.length > 0) {
-            $(colmTwo[colmTwo.length - 1]).addClass(turn);
-            colmTwo.splice(colmTwo.indexOf(this), 1);
-            checkForWin();
-            checkForTie();
-            switchTurn();
+            forJp(colmTwo)
         }
     });
     $("#colm-three").on("click", function() {
         if (colmThree.length > 0) {
-            $(colmThree[colmThree.length - 1]).addClass(turn);
-            colmThree.splice(colmThree.indexOf(this), 1);
-            checkForWin();
-            checkForTie();
-            switchTurn();
+            forJp(colmThree)
         }
     });
     $("#colm-four").on("click", function() {
         if (colmFour.length > 0) {
-            $(colmFour[colmFour.length - 1]).addClass(turn);
-            colmFour.splice(colmFour.indexOf(this), 1);
-            checkForWin();
-            checkForTie();
-            switchTurn();
+            forJp(colmFour)
         }
     });
     $("#colm-five").on("click", function() {
         if (colmFive.length > 0) {
-            $(colmFive[colmFive.length - 1]).addClass(turn);
-            colmFive.splice(colmFive.indexOf(this), 1);
-            checkForWin();
-            checkForTie();
-            switchTurn();
+            forJp(colmFive)
         }
     });
     $("#colm-six").on("click", function() {
         if (colmSix.length > 0) {
-            $(colmSix[colmSix.length - 1]).addClass(turn);
-            colmSix.splice(colmSix.indexOf(this), 1);
-            checkForWin();
-            checkForTie();
-            switchTurn();
+            forJp(colmSix)
         }
     });
     $("#colm-seven").on("click", function() {
         if (colmSeven.length > 0) {
-            $(colmSeven[colmSeven.length - 1]).addClass(turn);
-            colmSeven.splice(colmSeven.indexOf(this), 1);
-            checkForWin();
-            checkForTie();
-            switchTurn();
+           forJp(colmSeven)
         }
     });
 
@@ -173,10 +142,8 @@ $(document).ready(function() {
             clearBoard();
             playerWin++;
             $(turn).text(playerWin); 
-        } 
-      
+        }  
     }
-
     function checkForTie() {
         if (win === false && loss === false && colmOne.length === 0 &&
             colmTwo.length === 0 && colmThree.length === 0 && colmFour
@@ -188,7 +155,6 @@ $(document).ready(function() {
             $(".ties").text(playerWin);
         }
     }
-    
     function clearBoard() {
         $(".hole").removeClass("black");
         $(".hole").removeClass("red");
