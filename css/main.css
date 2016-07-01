@@ -1,19 +1,27 @@
 h1 {
   color: white;
 }
-h2 {
+
+#scoreboard {
   color: white;
-  float: right;
+  font-size: 36pt;
 }
 
-h3 {
+#notime {
+  color: white;
+  font-size: 15pt;
+}
+
+h3, h2 {
   color: white;
   float: right;
   text-align: center;
 }
 
-form {
-  
+#textie {
+  text-align: center;
+  margin:0 auto;
+  float: right;
 }
 
 body {
@@ -21,7 +29,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 100%;
-  padding: 55px 0px 0px 0px;
+  padding: 40px 0px 0px 0px;
 }
 
 #board {
@@ -60,4 +68,15 @@ body {
 .col-xs-1,
 .col-md-1 {
   width: 10%
+}
+
+svg {
+    opacity: 0.9;
+    width: 7.5em;
+    height: 1.5em;
+    font: 900 500%/1.2 'Coming Soon', cursive;
+}
+
+text {
+    fill: url(#wall4);
 }

@@ -168,5 +168,5 @@ $(document).ready(function() {
         colmSix = jQuery.makeArray(elemsSix);
         colmSeven = jQuery.makeArray(elemsSeven);
     };
-});
+})
 
